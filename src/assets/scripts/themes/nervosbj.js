@@ -1,4 +1,4 @@
-var lupengTheme = {
+var nervosbjTheme = {
     BASE: {
         'text-align': 'left',
         'color': '#595959',
@@ -85,10 +85,10 @@ var lupengTheme = {
             'border-radius': '3px',
         },
         link: {
-            'color': '#ff3502'
+            'color': '#3da742'
         },
         wx_link: {
-            'color': '#576b95',
+            'color': '#3da742',
             'text-decoration': 'none'
         },
         strong: {

@@ -20,14 +20,16 @@ var app = new Vue({
         { label: '17px', value: '17px', desc: '正常' },
         { label: '18px', value: '18px', desc: '稍大' }
       ],
-      currentTheme: 'default',
+      currentTheme: 'nervosbj',
       themeOption: [
+        { label: 'nervosbj', value: 'nervosbj', author: 'nervosbj'},
         { label: 'default', value: 'default', author: 'Lyric'},
-        { label: 'lupeng', value: 'lupeng', author: '鲁鹏'}
+        { label: 'lupeng', value: 'lupeng', author: '鲁鹏'},
       ],
       styleThemes: {
         default: defaultTheme,
-        lupeng: lupengTheme
+        lupeng: lupengTheme,
+        nervosbj: nervosbjTheme
       },
       aboutDialogVisible: false
     }
@@ -46,7 +48,7 @@ var app = new Vue({
     })
     // this.currentFont = this.builtinFonts[0],
     this.wxRenderer = new WxRenderer({
-      theme: this.styleThemes.default,
+      theme: this.styleThemes.nervosbj,
       fonts: this.currentFont,
       size: this.currentSize
     })
@@ -94,11 +96,11 @@ var app = new Vue({
     copy: function () {
       var clipboardDiv = document.getElementById('output')
       clipboardDiv.focus();
-      window.getSelection().removeAllRanges();  
-      var range = document.createRange(); 
+      window.getSelection().removeAllRanges();
+      var range = document.createRange();
       range.setStartBefore(clipboardDiv.firstChild);
       range.setEndAfter(clipboardDiv.lastChild);
-      window.getSelection().addRange(range);  
+      window.getSelection().addRange(range);
 
       try {
         if (document.execCommand('copy')) {
